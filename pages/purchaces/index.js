@@ -1,12 +1,15 @@
 const purchaces = () => {
     
     return (
-        <div>
-            <h1>
-                This are your purchases!
-            </h1>
-        </div>
+    <div className="center">
+        <h1 className="title">
+            This is are your purchaces!
+        </h1>
+        <button className='general-button' onClick={() => window.location='home'}>
+            Go Back Home
+        </button>
+    </div>
     )
 }
 
-export default purchases
+export default purchaces

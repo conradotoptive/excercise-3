@@ -1,10 +1,13 @@
 const products = () => {
     
     return (
-        <div>
-            <h1>
-                This is the products catalogue!
+        <div className="center">
+            <h1 className="title">
+                This is the product catalogue!
             </h1>
+            <button className='general-button' onClick={() => window.location='home'}>
+                Go Back Home
+            </button>
         </div>
     )
 }

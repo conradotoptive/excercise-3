@@ -1,21 +1,21 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Welcome() {
   return (
-    <div>
+    <div className='center'>
       <Head>
         <title>👨‍💻 Exercise 3</title>
       </Head>
-
-      <main>
-        <h1 className={styles.title}>
+        <h1 className='title'>
           Welcome to Exercise 3!
         </h1>
-        <a href='/login'>
-          Login
-        </a>
-      </main>
+        <button className='general-button' onClick={() => window.location='/login'}>
+          Log In
+        </button>
+        <p/>
+        <button className='general-button' onClick={() => window.location='/register'}>
+          Register
+        </button>
     </div>
   )
 }
