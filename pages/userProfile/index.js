@@ -1,7 +1,8 @@
-const userProfile = () => {
+const UserProfile = () => {
     
     return (
         <div className="center">
+            <title>👨‍💻 Exercise 3</title>
             <h1 className="title">
                 This is your profile!
             </h1>
@@ -12,4 +13,4 @@ const userProfile = () => {
     )
 }
 
-export default userProfile
+export default UserProfile

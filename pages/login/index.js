@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const login = () => {
+const Login = () => {
 
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,6 +27,7 @@ const login = () => {
     
     return (
         <div className='center'>
+            <title>👨‍💻 Exercise 3</title>
             <h1 className='title'>
                 This is the logIn!
             </h1>
@@ -61,4 +62,4 @@ const login = () => {
     )
 }
 
-export default login
+export default Login

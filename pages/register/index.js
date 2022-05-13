@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const register = () => {
+const Register = () => {
 
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
+    const [userName, setUserName] = useState('');
 
     const handleEmailChange = (e) => {
         e.preventDefault();
@@ -15,6 +16,11 @@ const register = () => {
         setPassword(e.target.value);
     }
 
+    const handleUserNameChange = (e) => {
+        e.preventDefault();
+        setUserName(e.target.value);
+    }
+
     const onClickRegister = (e) => {
         e.preventDefault();
         return window.location ='/home'
@@ -22,6 +28,7 @@ const register = () => {
 
     return (
         <div className="center">
+            <title>👨‍💻 Exercise 3</title>
             <h1 className="title">
                 This is the Register!
             </h1>
@@ -30,15 +37,23 @@ const register = () => {
                     className='input-credentials'
                     value={mail}
                     type='text'
-                    placeholder="e-mail"
+                    placeholder="E-mail"
                     onChange={handleEmailChange}
+                />
+                <p/>
+                <input
+                    className='input-credentials'
+                    value={userName}
+                    type='text'
+                    placeholder="User Name"
+                    onChange={handleUserNameChange}
                 />
                 <p/>
                 <input
                     className='input-credentials'
                     value={password}
                     type='text'
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={handlePasswordChange}
                 />
                 <p/>
@@ -50,4 +65,4 @@ const register = () => {
     )
 }
 
-export default register
+export default Register

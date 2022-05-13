@@ -1,8 +1,9 @@
 
-const home = () => {
+const Home = () => {
 
     return (
         <div className='center'>
+            <title>👨‍💻 Exercise 3</title>
             <h1 className='title'>
                 Home
             </h1>
@@ -30,4 +31,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

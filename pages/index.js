@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Welcome() {
+const Welcome= () => {
   return (
     <div className='center'>
       <Head>
@@ -19,3 +19,5 @@ export default function Welcome() {
     </div>
   )
 }
+
+export default Welcome;

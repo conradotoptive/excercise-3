@@ -1,7 +1,8 @@
-const purchaces = () => {
+const Purchaces = () => {
     
     return (
     <div className="center">
+        <title>👨‍💻 Exercise 3</title>
         <h1 className="title">
             This is are your purchaces!
         </h1>
@@ -12,4 +13,4 @@ const purchaces = () => {
     )
 }
 
-export default purchaces
+export default Purchaces

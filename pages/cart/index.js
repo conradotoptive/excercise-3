@@ -1,7 +1,8 @@
-const cart = () => {
+const Cart = () => {
     
     return (
         <div className="center">
+            <title>👨‍💻 Exercise 3</title>
             <h1 className="title">
                 This is your cart!
             </h1>
@@ -12,4 +13,4 @@ const cart = () => {
     )
 }
 
-export default cart
+export default Cart

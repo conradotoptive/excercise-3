@@ -7,7 +7,7 @@
 
 .general-button{
   font-size: 30px;
-  border-radius: inherit;
+  border-radius: 5px;
   display: flexbox;
   text-align: center;
 }
