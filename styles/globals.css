@@ -22,3 +22,10 @@
 .input-credentials{
   font-size: 20px;
 }
+
+.item-button{
+  font-size: 10px;
+  border-radius: 5px;
+  display: flexbox;
+  text-align: center;
+}
