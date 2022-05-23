@@ -1,17 +1,16 @@
 import axios from "axios";
-import { setCartList } from "../slices/cart";
 
 export const getCartItems = () => (dispatch) => {
-    axios
+    return axios
     .get("http://localhost:3001/api/cart")
     .then((response) => {
-        dispatch(setCartList(response.data.data));
+        return response;
     })
     .catch((err) => console.log(err));
 }
 
 export const getCartItem = (id) => {
-    axios
+    return axios
     .get(`http://localhost:3001/api/cart/${id}`)
     .then((response) => {
         return response;
@@ -20,7 +19,7 @@ export const getCartItem = (id) => {
 }
 
 export const createCartItem = () => {
-    axios
+    return axios
     .post("http://localhost:3001/api/cart")
     .then((response) => {
         return response;
@@ -29,7 +28,7 @@ export const createCartItem = () => {
 }
 
 export const deleteCartItem = (id) => {
-    axios
+    return axios
     .delete(`http://localhost:3001/api/cart/${id}`)
     .then((response) => {
         return response;
@@ -38,7 +37,7 @@ export const deleteCartItem = (id) => {
 }
 
 export const updateCartItem = (id) => {
-    axios
+    return axios
     .put(`http://localhost:3001/api/cart/${id}`)
     .then((response) => {
         return response;

@@ -1,24 +1,19 @@
 import axios from 'axios';
-import { logUserIn, logUserOut } from '../slices/user';
 
-export const logIn = () => (dispatch) => {
-    axios
-    .post("http://localhost:3001/api/login")
+export const logIn = (mail) => {
+    return axios
+    .post("http://localhost:3001/api/login", { mail })
     .then((response) => {
-        dispatch(logUserIn(response.data.data));
+        return response;
     })
     .catch((err) => console.log(err));
 }
 
-export const register = () => (dispatch) => {
-    axios
-    .post("http://localhost:3001/api/register")
+export const register = (userName, mail, password) => {
+    return axios
+    .post("http://localhost:3001/api/register", { userName, mail, password })
     .then((response) => {
-        dispatch(logUserIn(response.data.data));
+        return response;
     })
     .catch((err) => console.log(err));
-}
-
-export const logOut = () => (dispatch) => {
-    dispatch(logUserOut);
 }

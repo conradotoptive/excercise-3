@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Provider } from 'react-redux';
-import store from '../store';
+//import withRedux from 'next-redux-wrapper';
+import { store, wrapper } from '../store';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,4 +11,4 @@ function MyApp({ Component, pageProps }) {
   )  
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);

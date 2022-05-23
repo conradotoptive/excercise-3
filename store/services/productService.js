@@ -1,38 +1,37 @@
 import axios from 'axios';
-import { setProductList } from '../slices/products';
 
-export const getActiveProducts = () => (dispatch) => {
-    axios
+export const getActiveProducts = () => {
+    return axios
     .get("http://localhost:3001/api/products")
     .then((response) => {
-        dispatch(setProductList(response.data.docs));
+        return response.data;
     })
     .catch((err) => console.log(err));
 }
 
-export const getAllProducts = () => (dispatch) => {
-    axios
+export const getAllProducts = () => {
+    return axios
     .get("http://localhost:3001/api/products/all")
     .then((response) => {
-        dispatch(setProductList(response.data.docs));
+       return response.data;
     })
     .catch((err) => console.log(err));
 }
 
 export const getOneProduct = (id) => {
-    axios
+    return axios
     .get(`http://localhost:3001/api/products/${id}`)
     .then((response) => {
-        return response;
+        return response.data;
     })
     .catch((err) => console.log(err));
 }
 
 export const updateProductState = (id) => {
-    axios
+    return axios
     .put(`http://localhost:3001/api/products/${id}`)
     .then((response) => {
-        return response;
+        return response.data;
     })
     .catch ((err) => console.log(err));
 }
