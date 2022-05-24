@@ -1,6 +1,9 @@
 import Products from "../../components/product/Products";
+import { useRouter } from 'next/router';
 
 const ProductsPage = () => {
+
+    const router = useRouter();
     
     return (
         <>
@@ -11,7 +14,7 @@ const ProductsPage = () => {
                 </h1>
                 <Products/>
                 <p/>
-                <button className='general-button' onClick={() => window.location='home'}>
+                <button className='general-button' onClick={() => router.push('/home')}>
                     Go Back Home
                 </button>
             </div>

@@ -1,14 +1,14 @@
 import { actionTypes } from './action';
 
 export const initialState = {
-    user: {},
+    user: null,
     isLogged: false,
 }
 
 function reducer (state = initialState, action) {
-    switch (action.types) {
+    switch (action.type) {
         case actionTypes.SET_USER: {
-            let { user } = action.payload;
+            let user = action.payload;
             return {
                 ...state,
                 user,

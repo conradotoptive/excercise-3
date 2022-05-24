@@ -10,11 +10,10 @@ export function logInUser(mail) {
     return async (dispatch, store) => {
         try {
             const res = await logIn(mail);
-            const json = await res.json();
-            const user = json;
-            await dispatch(setUser({ user }));
-            await logUserIn();
-            return user;
+            const user = res.data;
+            await dispatch(setUser(user));
+            await dispatch(logUserIn());
+            //return user;
         } catch (err) {
             console.log(err);
         }
@@ -25,11 +24,13 @@ export function registerUser(userName, mail, password) {
     return async (dispatch, store) => {
         try {
             const res = await register(userName, mail, password);
-            const json = await res.json();
-            const user = json;
-            await dispatch(setUser({ user }));
-            await logUserIn();
-            return user;
+            if (res.data === "duplicated") {
+                return "duplicated"
+            }
+            const user = res.data;
+            console.log(user)
+            await dispatch(setUser(user));
+            await dispatch(logUserIn());
         } catch (err) {
             console.log(err);
         }

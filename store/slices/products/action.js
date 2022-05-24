@@ -24,9 +24,8 @@ export function requestAllProducts() {
     return async (dispatch, store) => {
         try {
             const res = await getAllProducts();
-            const product = res;
+            const product = res.docs;
             await dispatch(setProductList( product ));
-            return product;
         } catch (err) {
             console.log(err);
         }
@@ -38,7 +37,7 @@ export function requestOneProduct(id) {
         try {
             const res = await getOneProduct(id);
             const  product  = res;
-            await dispatch(setProductList( product ));
+            await dispatch(setProduct( product ));
         } catch (err) {
             console.log(err);
         }

@@ -1,15 +1,21 @@
 import { connect, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
-import { requestActiveProducts } from "../../store/slices/products/action";
+import { useEffect } from "react";
+import { requestActiveProducts, setProduct } from "../../store/slices/products/action";
+import { useRouter } from 'next/router';
 
 const Products = ({ products }) => {
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     useEffect(() => {
         dispatch(requestActiveProducts());
     }, [])
-
+    
+    const handleSeeItemClick = (product) => {
+        dispatch(setProduct(product));
+        router.push(`/products/${product._id}`);
+    }
 
     return (
         <>
@@ -18,7 +24,7 @@ const Products = ({ products }) => {
                     <div key={index} className="item-box">
                         {product.name}
                         <p/>
-                        <button className="item-button">
+                        <button className="item-button" onClick={() => handleSeeItemClick(product)}>
                             See Item
                         </button>
                     </div>
@@ -28,10 +34,10 @@ const Products = ({ products }) => {
     )
 }
 
-const mapStateToPops = (state) =>{
+const mapStateToProps = (state) =>{
     return {
         products: state.products,
     };
 };
 
-export default connect(mapStateToPops)(Products);
+export default connect(mapStateToProps)(Products);

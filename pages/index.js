@@ -1,6 +1,10 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 
 const Welcome= () => {
+
+  const router = useRouter();
+
   return (
     <>
       <div className='center'>
@@ -10,11 +14,11 @@ const Welcome= () => {
           <h1 className='title'>
             Welcome to Exercise 3!
           </h1>
-          <button className='general-button' onClick={() => window.location='/login'}>
+          <button className='general-button' onClick={() => window.location = '/login'}>
             Log In
           </button>
           <p/>
-          <button className='general-button' onClick={() => window.location='/register'}>
+          <button className='general-button' onClick={() => window.location = '/register'}>
             Register
           </button>
       </div>

@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { Provider } from 'react-redux';
-//import withRedux from 'next-redux-wrapper';
+import withRedux from 'next-redux-wrapper';
 import { store, wrapper } from '../store';
 
 function MyApp({ Component, pageProps }) {

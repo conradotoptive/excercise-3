@@ -1,20 +1,24 @@
+import Product from "../../../components/product/Product";
+import { useRouter } from 'next/router';
 
-
-const Product = () => {
+const ProductItem = () => {
     
+    const router = useRouter();
+
     return (
         <>
             <div className="center">
                 <title>👨‍💻 Exercise 3</title>
                 <h1 className="title">
-                    Work in progress
+                    Product
                 </h1>
-                <button className='general-button' onClick={() => window.location='/home'}>
-                    Go Back Home
+                <Product/>
+                <button className='general-button' onClick={() => router.push('/products')}>
+                    Go Back
                 </button>
             </div>
         </>
     )
 }
 
-export default Product
+export default ProductItem
