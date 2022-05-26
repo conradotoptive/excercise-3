@@ -1,7 +1,7 @@
+import CartItem from "../../../components/cart/CartItem";
 import { useRouter } from 'next/router';
-import CartItems from '../../components/cart/CartItems';
 
-const Cart = () => {
+const ItemCart = () => {
     
     const router = useRouter();
 
@@ -10,15 +10,15 @@ const Cart = () => {
             <div className="center">
                 <title>👨‍💻 Exercise 3</title>
                 <h1 className="title">
-                    This is your cart!
+                    Cart Item
                 </h1>
-                <CartItems/>
-                <button className='general-button' onClick={() => router.push('/home')}>
-                    Go Back Home
+                <CartItem/>
+                <button className='general-button' onClick={() => router.push('/cart')}>
+                    Go Back
                 </button>
             </div>
         </>
     )
 }
 
-export default Cart
+export default ItemCart

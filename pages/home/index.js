@@ -27,7 +27,7 @@ const Home = () => {
                     Products
                 </button>
                 <p/>
-                <button className='general-button' onClick={() => router.replace('/')}>
+                <button className='general-button' onClick={() => window.location = '/'}>
                     Log out
                 </button>
 

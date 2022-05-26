@@ -1,12 +1,15 @@
 import axios from 'axios';
 
-export const logIn = (mail) => {
+export const logIn = (mail, password) => {
     return axios
-    .post("http://localhost:3001/api/auth/login", { mail })
+    .post("http://localhost:3001/api/auth/login", { mail, password })
     .then((response) => {
         return response;
     })
-    .catch((err) => console.log(err));
+    .catch(function (err){
+        console.log(err)
+        return err.response.status;
+    })
 }
 
 export const register = (userName, mail, password) => {
@@ -15,5 +18,8 @@ export const register = (userName, mail, password) => {
     .then((response) => {
         return response;
     })
-    .catch((err) => console.log(err));
+    .catch(function (err){
+        console.log(err)
+        return err.response.status;
+    })
 }

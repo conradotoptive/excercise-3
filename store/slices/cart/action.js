@@ -1,4 +1,4 @@
-import { getCartItems, getCartItem } from "../../services/cartService";
+import { getCartItems, getCartItem, createCartItem, updateCartItem, getPurchaces } from "../../services/cartService";
 
 export const actionTypes = {
     SET_CART_LIST: 'SET_CART_LIST',
@@ -10,9 +10,22 @@ export function requestCartItems() {
     return async (dispatch, store) => {
         try {
             const res = await getCartItems();
-            const json = await res.json();
-            const { list }  = json;
-            await dispatch(setCartList({ list }));
+            const list = res.docs;
+            await dispatch(setCartList(list));
+            return list;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+export function requestPurchaces() {
+    return async (dispatch, store) => {
+        try {
+            const res = await getPurchaces();
+            const list = res.docs;
+            await dispatch(setCartList(list));
+            return list;
         } catch (err) {
             console.log(err);
         }
@@ -23,10 +36,32 @@ export function requestCartItem(id) {
     return async (dispatch, store) => {
         try {
             const res = await getCartItem(id);
-            const json = await res.json();
-            const item  = json;
-            await dispatch(setCartItem({ item }));
-            return item;
+            const item = res;
+            await dispatch(setCartItem(item));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+export function newCartItem(user, product, quantity){
+    return async(dispatch, store) => {
+        try {
+            const res = await createCartItem(user, product, quantity);
+            const item = res;
+            await dispatch(setCartItem(item))
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+export function buyItem(cartId, cartItem) {
+    return async(dispatch, store) => {
+        try {
+            const res = await updateCartItem(cartId, cartItem);
+            const item = res;
+            await dispatch(setCartItem(item));
         } catch (err) {
             console.log(err);
         }

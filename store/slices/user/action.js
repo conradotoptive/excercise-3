@@ -6,14 +6,19 @@ export const actionTypes = {
     LOG_USER_OUT: 'LOG_USER_OUT',
 };
 
-export function logInUser(mail) {
+export function logInUser(mail, password) {
     return async (dispatch, store) => {
         try {
-            const res = await logIn(mail);
+            const res = await logIn(mail, password);
+            if (res === 404) {
+                return 404
+            }
+            if (res === 401) {
+                return 401
+            }
             const user = res.data;
             await dispatch(setUser(user));
             await dispatch(logUserIn());
-            //return user;
         } catch (err) {
             console.log(err);
         }
@@ -24,8 +29,8 @@ export function registerUser(userName, mail, password) {
     return async (dispatch, store) => {
         try {
             const res = await register(userName, mail, password);
-            if (res.data === "duplicated") {
-                return "duplicated"
+            if (res === 404) {
+                return 404
             }
             const user = res.data;
             console.log(user)

@@ -27,13 +27,13 @@ const Register = ({ user }) => {
         setUserName(e.target.value);
     }
 
-    const onClickRegister = (e) => {
+    const onClickRegister = async (e) => {
         e.preventDefault();
         if (!mail || !password || !userName) {
             alert("Please, complete all the fields");
         } else {
-            dispatch(registerUser(userName, mail, password))
-            if (!newUser.user) {
+            const state = await dispatch(registerUser(userName, mail, password));
+            if (state === 404) {
                 alert("This user already exists")
                 return
             } else {

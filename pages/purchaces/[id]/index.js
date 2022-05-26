@@ -1,7 +1,7 @@
+import Purchace from "../../../components/purchace/Purchace";
 import { useRouter } from 'next/router';
-import CartItems from '../../components/cart/CartItems';
 
-const Cart = () => {
+const ItemPurchaced = () => {
     
     const router = useRouter();
 
@@ -10,15 +10,15 @@ const Cart = () => {
             <div className="center">
                 <title>👨‍💻 Exercise 3</title>
                 <h1 className="title">
-                    This is your cart!
+                    Item Purchaced
                 </h1>
-                <CartItems/>
-                <button className='general-button' onClick={() => router.push('/home')}>
-                    Go Back Home
+                <Purchace/>
+                <button className='general-button' onClick={() => router.push('/purchaces')}>
+                    Go Back
                 </button>
             </div>
         </>
     )
 }
 
-export default Cart
+export default ItemPurchaced

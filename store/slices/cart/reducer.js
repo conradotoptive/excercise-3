@@ -8,14 +8,14 @@ export const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.SET_CART_LIST: {
-            let { list } = action.payload;
+            let list = action.payload;
             return {
                 ...state,
                 list,
             }
         }
         case actionTypes.SET_CART_ITEM: {
-            let { item } = action.payload;
+            let item = action.payload;
             return {
                 ...state,
                 item,

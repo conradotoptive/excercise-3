@@ -1,11 +1,12 @@
 import { connect, useDispatch } from "react-redux";
 import { useRouter } from 'next/router';
 import { useState } from "react";
-import { logUserIn } from "../../store/slices/user/action";
+import { logInUser } from "../../store/slices/user/action";
 
 const LogIn = () => {
 
     const router = useRouter();
+    const dispatch = useDispatch();
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,9 +20,24 @@ const LogIn = () => {
         setPassword(e.target.value);
     }
 
-    const onClickLogIN = (e) => {
+    const onClickLogIN = async (e) => {
         e.preventDefault();
-        return router.replace('/home');
+        if (!mail || !password) {
+            alert("Please, complete all the fields");
+        } else {
+            const state = await (dispatch(logInUser(mail, password)) || "");
+            if (state === 404){
+                alert("This user not exist")
+                return
+            } 
+            if (state === 401) {
+                alert("Wrong credentials")
+                return
+            }
+            alert("LogIn successfully");
+            return router.replace('/home');
+        
+        }
     }
 
     const onClickRegister = (e) => {
@@ -43,7 +59,7 @@ const LogIn = () => {
                 <input
                     className='input-credentials'
                     value={password}
-                    type='text'
+                    type='password'
                     placeholder="password"
                     onChange={handlePasswordChange}
                 />

@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 import LogIn from '../../components/auth/LogIn';
 
 const Login = () => {

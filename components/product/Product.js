@@ -1,16 +1,33 @@
 import { connect, useDispatch } from "react-redux";
-import { useRouter } from 'next/router';
+import { newCartItem, requestCartItems } from "../../store/slices/cart/action";
 
 const Product = ({ products, user, cart }) => {
-    
-    const router = useRouter();
+
     const dispatch = useDispatch();
 
     const product = products.product;
-    const loggedUser = user.user;
+    const loggedUser = user.user.user;
+ 
+    const checkItemInCart = (itemList) => {
+        let flag = false
+        itemList.forEach(element => {
+            if (element.productId === product._id) {
+                flag = true;
+            }
+        });
+        return flag
+    };
 
-    const handleAddToCartButton = () => {
+    const handleAddToCartButton = async () => {
+        const cartItemList = await (dispatch(requestCartItems()) || []);
+        //const cartItemList = await cart.list || [];
+        if (checkItemInCart(cartItemList)) {
+            alert("This product is already in your cart");
+            return;
+        }
+        await dispatch(newCartItem(loggedUser, product, 0))
         alert("Product added to the cart succesfully!");
+        return;
     };
 
     return (
