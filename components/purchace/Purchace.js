@@ -13,7 +13,7 @@ const Purchace = ({ products, cart }) => {
                 <p> Description:  {product.description} </p>
                 <p> Shipment delivery time:  {product.shipmentDeliveryTime} </p>
                 <p> Size:  {product.size} </p>
-                <p> Quantity: {cartItem.quantity} </p>
+                <p> Quantity bought: {cartItem.quantity} </p>
             </div>
         </>
     )

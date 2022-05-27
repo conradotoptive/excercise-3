@@ -6,10 +6,10 @@ export const actionTypes = {
     CLEAR_CART_LIST: 'CLEAR_CART_LIST',
 };
 
-export function requestCartItems() {
+export function requestCartItems(userId) {
     return async (dispatch, store) => {
         try {
-            const res = await getCartItems();
+            const res = await getCartItems(userId);
             const list = res.docs;
             await dispatch(setCartList(list));
             return list;
@@ -19,10 +19,10 @@ export function requestCartItems() {
     }
 }
 
-export function requestPurchaces() {
+export function requestPurchaces(userId) {
     return async (dispatch, store) => {
         try {
-            const res = await getPurchaces();
+            const res = await getPurchaces(userId);
             const list = res.docs;
             await dispatch(setCartList(list));
             return list;

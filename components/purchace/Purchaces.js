@@ -4,13 +4,14 @@ import { useRouter } from 'next/router';
 import { requestPurchaces, setCartItem } from "../../store/slices/cart/action";
 import { requestOneProduct } from "../../store/slices/products/action";
 
-const Purchaces = ({ purchaces }) => {
+const Purchaces = ({ purchaces, user }) => {
 
     const dispatch = useDispatch();
     const router = useRouter();
+    const userId = user.user._id;
 
     useEffect(() => {
-        dispatch(requestPurchaces());
+        dispatch(requestPurchaces(userId));
     }, [])
     
     const handleSeeItemClick = (item) => {
@@ -38,7 +39,8 @@ const Purchaces = ({ purchaces }) => {
 
 const mapStateToProps = (state) =>{
     return {
-        purchaces: state.cart
+        purchaces: state.cart,
+        user: state.user,
     };
 };
 

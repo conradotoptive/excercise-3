@@ -2,6 +2,7 @@ import { actionTypes } from './action';
 
 export const initialState = {
     user: null,
+    token: null,
     isLogged: false,
 }
 
@@ -24,6 +25,15 @@ function reducer (state = initialState, action) {
             return {
                 ...state,
                 isLogged: false,
+                token: null,
+                user: null,
+            }
+        }
+        case actionTypes.SET_TOKEN: {
+            let token = action.payload
+            return {
+                ...state,
+                token,
             }
         }
         default:

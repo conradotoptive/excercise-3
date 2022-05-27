@@ -35,3 +35,15 @@ export const updateProductState = (id) => {
     })
     .catch ((err) => console.log(err));
 }
+
+export const updateProductQuantity = (id, product) => {
+    return axios
+    .put(`http://localhost:3001/api/products/quantity/${id}`, { product })
+    .then((response) => {
+        return response.data;
+    })
+    .catch(function (err){
+        console.log(err);
+        return err.response.status;
+    })
+}

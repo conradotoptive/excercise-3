@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useRouter } from 'next/router';
 import Register from "../../components/auth/Register";
 
 const userRegister = () => {
