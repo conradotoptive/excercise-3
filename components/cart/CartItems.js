@@ -24,11 +24,11 @@ const CartItems = ({ items, user }) => {
         <>
             {
                 (items.list || []).map((item, index) => (
-                    <div key={index} className="item-box">
-                        {item.name}
-                        <p/>
-                        <button className="item-button" onClick={() => handleSeeItemClick(item)}>
-                            See Item
+                    <div key={index} className="list-group">
+                        <button class="list-group-item list-group-item-action" onClick={() => handleSeeItemClick(item)}>
+                            <div class="w-100 justify-content-between">
+                                <h5 class="mb-1">{item.name}</h5>
+                            </div>
                         </button>
                     </div>
                 ))

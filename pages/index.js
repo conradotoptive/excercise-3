@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import { useRouter } from 'next/router';
+import Products from '../components/product/Products';
 
 const Welcome= () => {
 
@@ -8,19 +8,10 @@ const Welcome= () => {
   return (
     <>
       <div className='center'>
-        <Head>
-          <title>👨‍💻 Exercise 3</title>
-        </Head>
-          <h1 className='title'>
-            Welcome to Exercise 3!
-          </h1>
-          <button className='general-button' onClick={() => window.location = '/login'}>
-            Log In
-          </button>
-          <p/>
-          <button className='general-button' onClick={() => window.location = '/register'}>
-            Register
-          </button>
+        <h1 className="title">
+          This is the product catalogue!
+        </h1>
+        <Products />
       </div>
     </>
   )

@@ -24,11 +24,11 @@ const Purchaces = ({ purchaces, user }) => {
         <>
             {
                 (purchaces.list || []).map((purchace, index) => (
-                    <div key={index} className="item-box">
-                        {purchace.name}
-                        <p/>
-                        <button className="item-button" onClick={() => handleSeeItemClick(purchace)}>
-                            See Item
+                    <div key={index} className="list-group">
+                        <button class="list-group-item list-group-item-action" onClick={() => handleSeeItemClick(purchace)}>
+                            <div class="w-100 justify-content-between">
+                                <h5 class="mb-1">{purchace.name}</h5>
+                            </div>
                         </button>
                     </div>
                 ))

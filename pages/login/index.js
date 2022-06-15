@@ -5,9 +5,8 @@ const Login = () => {
     return (
         <>
             <div className='center'>
-                <title>👨‍💻 Exercise 3</title>
                 <h1 className='title'>
-                    This is the logIn!
+                    LogIn
                 </h1>
                 <LogIn/>
             </div>

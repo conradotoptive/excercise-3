@@ -8,12 +8,9 @@ const ItemPurchaced = () => {
     return (
         <>
             <div className="center">
-                <title>👨‍💻 Exercise 3</title>
-                <h1 className="title">
-                    Item Purchaced
-                </h1>
                 <Purchace/>
-                <button className='general-button' onClick={() => router.push('/purchaces')}>
+                <br/>
+                <button className='btn btn-primary' onClick={() => router.push('/purchaces')}>
                     Go Back
                 </button>
             </div>

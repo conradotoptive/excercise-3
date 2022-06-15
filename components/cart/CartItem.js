@@ -26,14 +26,14 @@ const CartItem = ({ products, cart, user }) => {
 
     return (
         <>
+            <h1 className="title"> {product.name} </h1>
             <div className="item-box">
-                <p> Product: {product.name} </p>
                 <p> Price:  {product.price} </p>
                 <p> Description:  {product.description} </p>
                 <p> Shipment delivery time:  {product.shipmentDeliveryTime} </p>
                 <p> Size:  {product.size} </p>
                 <p> Quantity: {product.quantity} </p>
-                <button className="item-button" onClick={() => handleBuyButton(cartItem._id, cartItem, product, loggedUser._id, loggedUser)}> 
+                <button className="btn btn-success" onClick={() => handleBuyButton(cartItem._id, cartItem, product, loggedUser._id, loggedUser)}> 
                     Buy
                 </button>
             </div>

@@ -8,12 +8,9 @@ const ItemCart = () => {
     return (
         <>
             <div className="center">
-                <title>👨‍💻 Exercise 3</title>
-                <h1 className="title">
-                    Cart Item
-                </h1>
                 <CartItem/>
-                <button className='general-button' onClick={() => router.push('/cart')}>
+                <br/>
+                <button className='btn btn-primary' onClick={() => router.push('/cart')}>
                     Go Back
                 </button>
             </div>

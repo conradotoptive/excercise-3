@@ -16,16 +16,16 @@ const Products = ({ products }) => {
         dispatch(setProduct(product));
         router.push(`/products/${product._id}`);
     }
-
+    
     return (
         <>
             {
                 (products.productList || []).map((product, index) => (
-                    <div key={index} className="item-box">
-                        {product.name}
-                        <p/>
-                        <button className="item-button" onClick={() => handleSeeItemClick(product)}>
-                            See Item
+                    <div key={index} className="list-group">
+                        <button className="list-group-item list-group-item-action" onClick={() => handleSeeItemClick(product)}>
+                            <div className="w-100 justify-content-between">
+                                <h5 className="mb-1">{product.name}</h5>
+                            </div>
                         </button>
                     </div>
                 ))

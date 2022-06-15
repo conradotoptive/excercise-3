@@ -5,9 +5,8 @@ const userRegister = () => {
     return (
         <>
             <div className="center">
-                <title>👨‍💻 Exercise 3</title>
                 <h1 className="title">
-                    This is the Register!
+                    Register
                 </h1>
                 <Register/>
             </div>

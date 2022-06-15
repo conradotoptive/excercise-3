@@ -35,7 +35,7 @@ const LogIn = () => {
                 return
             }
             alert("LogIn successfully");
-            return router.replace('/home');
+            return router.replace('/products');
         
         }
     }
@@ -47,32 +47,34 @@ const LogIn = () => {
 
     return(
         <>
-            <form>
-                <input
-                    className='input-credentials'
-                    value={mail}
-                    type='text'
-                    placeholder="e-mail"
-                    onChange={handleEmailChange}
-                />
-                <p/>
-                <input
-                    className='input-credentials'
-                    value={password}
-                    type='password'
-                    placeholder="password"
-                    onChange={handlePasswordChange}
-                />
-                <p/>
-                <button className='general-button' onClick={onClickLogIN}>
+            <form className='form-container'>
+                <div className='mb-3'>
+                    <input
+                        className='form-control'
+                        value={mail}
+                        type='text'
+                        placeholder="e-mail"
+                        onChange={handleEmailChange}
+                    />
+                </div>
+                <div className='mb-3'>
+                    <input
+                        className='form-control'
+                        value={password}
+                        type='password'
+                        placeholder="password"
+                        onChange={handlePasswordChange}
+                    />
+                </div>
+                <button className='btn btn-primary' onClick={onClickLogIN}>
                     Log In
                 </button>
-                <p>
-                    if you don't have and account, create one!
-                </p>
-                <button className='general-button' onClick={onClickRegister}>
+                <br/>
+                <br/>
+                <button className='btn btn-primary' onClick={onClickRegister}>
                     Register
                 </button>
+                <div id="emailHelp" className="form-text">If you dont have an account, create one!</div> 
             </form>
         </>
     )

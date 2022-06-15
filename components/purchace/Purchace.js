@@ -7,8 +7,8 @@ const Purchace = ({ products, cart }) => {
 
     return (
         <>
+            <h1 className="title"> {product.name} </h1>
             <div className="item-box">
-                <p> Product: {product.name} </p>
                 <p> Price:  {product.price} </p>
                 <p> Description:  {product.description} </p>
                 <p> Shipment delivery time:  {product.shipmentDeliveryTime} </p>

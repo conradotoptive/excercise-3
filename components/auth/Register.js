@@ -38,39 +38,42 @@ const Register = ({ user }) => {
                 return
             } else {
                 alert("Register successfully");
-                return router.replace('/home');
+                return router.replace('/products');
             }   
         }
     }
 
     return (
         <>
-            <form>
-                <input
-                className='input-credentials'
-                    value={mail}
-                    type='text'
-                    placeholder="E-mail"
-                    onChange={handleEmailChange}
-                />
-                <p/>
-                <input
-                    className='input-credentials'
-                    value={userName}
-                    type='text'
-                    placeholder="User Name"
-                    onChange={handleUserNameChange}
-                />
-                <p/>
-                <input
-                    className='input-credentials'
-                    value={password}
-                    type='password'
-                    placeholder="Password"
-                    onChange={handlePasswordChange}
-                />
-                <p/>
-                <button className='general-button' onClick={onClickRegister}>
+            <form className='form-container'>
+                <div className='mb-3'>
+                    <input
+                    className='form-control'
+                        value={mail}
+                        type='text'
+                        placeholder="E-mail"
+                        onChange={handleEmailChange}
+                    />
+                </div>
+                <div className='mb-3'>
+                    <input
+                        className='form-control'
+                        value={userName}
+                        type='text'
+                        placeholder="User Name"
+                        onChange={handleUserNameChange}
+                    />
+                </div>
+                <div className='mb-3'>
+                    <input
+                        className='form-control'
+                        value={password}
+                        type='password'
+                        placeholder="Password"
+                        onChange={handlePasswordChange}
+                    />
+                </div>
+                <button className='btn btn-primary' onClick={onClickRegister}>
                     Register
                 </button>
             </form>
