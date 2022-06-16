@@ -1,4 +1,5 @@
 import Products from "../../components/product/Products";
+import ProductsPaginator from "../../components/shared/ProductsPaginator";
 
 const ProductsPage = () => {
         
@@ -9,7 +10,7 @@ const ProductsPage = () => {
                    Product catalogue
                 </h1>
                 <Products/>
-                <p/>
+                <ProductsPaginator/>
             </div>
         </>
     )

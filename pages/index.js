@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Products from '../components/product/Products';
+import Paginator from '../components/shared/Paginator';
 
 const Welcome= () => {
 
@@ -9,9 +10,10 @@ const Welcome= () => {
     <>
       <div className='center'>
         <h1 className="title">
-          This is the product catalogue!
+          Product catalogue
         </h1>
-        <Products />
+        <Products/>
+        <Paginator/>
       </div>
     </>
   )

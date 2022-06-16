@@ -9,7 +9,7 @@ const Products = ({ products }) => {
     const router = useRouter();
 
     useEffect(() => {
-        dispatch(requestActiveProducts());
+        dispatch(requestActiveProducts(1));
     }, [])
     
     const handleSeeItemClick = (product) => {

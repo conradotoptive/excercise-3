@@ -1,17 +1,17 @@
 import axios from 'axios';
 
-export const getActiveProducts = () => {
+export const getActiveProducts = (page) => {
     return axios
-    .get("http://localhost:3001/api/products")
+    .post("http://localhost:3001/api/products", { page })
     .then((response) => {
         return response.data;
     })
     .catch((err) => console.log(err));
 }
 
-export const getAllProducts = () => {
+export const getAllProducts = (page) => {
     return axios
-    .get("http://localhost:3001/api/products/all")
+    .post("http://localhost:3001/api/products/all", { page })
     .then((response) => {
        return response.data;
     })
