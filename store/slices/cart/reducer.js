@@ -3,6 +3,8 @@ import { actionTypes } from "./action";
 export const initialState = {
     item: null,
     list: [],
+    currentPage: 0,
+    totalPages: 0,
 };
 
 function reducer(state = initialState, action) {
@@ -25,6 +27,20 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 list: [],
+            }
+        }
+        case actionTypes.SET_CURRENT_PAGE: {
+            let currentPage = action.payload;
+            return {
+                ...state,
+                currentPage,
+            }
+        }
+        case actionTypes.SET_TOTAL_PAGES: {
+            let totalPages = action.payload;
+            return {
+                ...state,
+                totalPages,
             }
         }
         default:

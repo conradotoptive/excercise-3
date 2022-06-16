@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Products from '../components/product/Products';
-import Paginator from '../components/shared/Paginator';
+import ProductsPaginator from '../components/shared/ProductsPaginator';
 
 const Welcome= () => {
 
@@ -13,7 +13,7 @@ const Welcome= () => {
           Product catalogue
         </h1>
         <Products/>
-        <Paginator/>
+        <ProductsPaginator/>
       </div>
     </>
   )

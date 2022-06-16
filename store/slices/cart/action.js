@@ -4,6 +4,8 @@ export const actionTypes = {
     SET_CART_LIST: 'SET_CART_LIST',
     SET_CART_ITEM: 'SET_CART_ITEM',
     CLEAR_CART_LIST: 'CLEAR_CART_LIST',
+    SET_CURRENT_PAGE: 'SET_CURRENT_PAGE',
+    SET_TOTAL_PAGES: 'SET_TOTAL_PAGES',
 };
 
 export function requestCartItems(userId) {
@@ -11,6 +13,10 @@ export function requestCartItems(userId) {
         try {
             const res = await getCartItems(userId);
             const list = res.docs;
+            /*const totalPages = res.totalPages;
+            const currentPage = res.page;
+            await dispatch(setCurrentPage(currentPage));
+            await dispatch(setTotalPages(totalPages));*/
             await dispatch(setCartList(list));
             return list;
         } catch (err) {
@@ -19,12 +25,16 @@ export function requestCartItems(userId) {
     }
 }
 
-export function requestPurchaces(userId) {
+export function requestPurchaces(userId, page) {
     return async (dispatch, store) => {
         try {
-            const res = await getPurchaces(userId);
+            const res = await getPurchaces(userId, page);
             const list = res.docs;
-            await dispatch(setCartList(list));
+            /*const totalPages = res.totalPages;
+            const currentPage = res.page;
+            await dispatch(setCurrentPage(currentPage));
+            await dispatch(setTotalPages(totalPages));
+            await dispatch(setCartList(list));*/
             return list;
         } catch (err) {
             console.log(err);
@@ -86,4 +96,18 @@ export function clearCart() {
     return {
         type: actionTypes.CLEAR_CART_LIST,
     };
+}
+
+export function setCurrentPage(payload) {
+    return {
+        type: actionTypes.SET_CURRENT_PAGE,
+        payload,
+    }
+}
+
+export function setTotalPages(payload) {
+    return {
+        type: actionTypes.SET_TOTAL_PAGES,
+        payload,
+    }
 }
