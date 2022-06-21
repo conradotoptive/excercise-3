@@ -29,14 +29,14 @@ function reducer(state = initialState, action) {
                 list: [],
             }
         }
-        case actionTypes.SET_CURRENT_PAGE: {
+        case actionTypes.SET_CURRENT_CART_PAGE: {
             let currentPage = action.payload;
             return {
                 ...state,
                 currentPage,
             }
         }
-        case actionTypes.SET_TOTAL_PAGES: {
+        case actionTypes.SET_TOTAL_CART_PAGES: {
             let totalPages = action.payload;
             return {
                 ...state,
