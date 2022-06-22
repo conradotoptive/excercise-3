@@ -55,10 +55,10 @@ export function requestOneProduct(id) {
     }
 }
 
-export function updateQuantity(id, product){
+export function updateQuantity(id, product, quantity){
     return async (dispatch, store) => {
         try {
-            const res = await updateProductQuantity(id, product);
+            const res = await updateProductQuantity(id, product, quantity);
             if (res === 404) {
                 return 404
             }

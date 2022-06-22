@@ -66,10 +66,10 @@ export function newCartItem(user, product, quantity){
     }
 }
 
-export function buyItem(cartId, cartItem) {
+export function buyItem(cartId, cartItem, quantity) {
     return async(dispatch, store) => {
         try {
-            const res = await updateCartItem(cartId, cartItem);
+            const res = await updateCartItem(cartId, cartItem, quantity);
             const item = res;
             await dispatch(setCartItem(item));
         } catch (err) {

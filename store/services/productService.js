@@ -36,9 +36,9 @@ export const updateProductState = (id) => {
     .catch ((err) => console.log(err));
 }
 
-export const updateProductQuantity = (id, product) => {
+export const updateProductQuantity = (id, product, quantity) => {
     return axios
-    .put(`http://localhost:3001/api/products/quantity/${id}`, { product })
+    .put(`http://localhost:3001/api/products/quantity/${id}`, { product, quantity })
     .then((response) => {
         return response.data;
     })

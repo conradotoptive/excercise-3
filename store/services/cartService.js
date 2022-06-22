@@ -45,9 +45,9 @@ export const deleteCartItem = (id) => {
     .catch((err) => console.log(err));
 }
 
-export const updateCartItem = (id, cart) => {
+export const updateCartItem = (id, cart, quantity) => {
     return axios
-    .put(`http://localhost:3001/api/cart/${id}`, { cart })
+    .put(`http://localhost:3001/api/cart/${id}`, { cart, quantity })
     .then((response) => {
         return response.data;
     })
